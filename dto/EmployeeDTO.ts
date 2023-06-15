@@ -3,5 +3,5 @@ export interface IEmployeeDTO {
   surname: string;
   email: string;
   position: string;
-  id: number;
+  id: number | string;
 }

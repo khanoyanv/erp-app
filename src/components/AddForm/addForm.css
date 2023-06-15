@@ -1,0 +1,38 @@
+.form__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.form__container input[type='text'] {
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form__container input[type='text']:hover {
+  border-bottom: 1px solid blue;
+}
+
+.form__container input[type='text']:focus {
+  border-bottom: 1px solid blue;
+}
+
+.form-submit__button {
+  padding: 5px;
+  color: blue;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-submit__button:hover {
+  border: 1px solid blue;
+  opacity: 0.8;
+}

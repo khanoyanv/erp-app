@@ -1,22 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 import './employees.css';
-import { selectAllEmployees } from '../../../store/employeesSlice';
-import { useSelector } from 'react-redux';
 import { IEmployeeDTO } from '../../../dto/EmployeeDTO';
 import { Employee } from './components/Employee/Employee';
 
-export const Employees = () => {
-  const employees: IEmployeeDTO[] = useSelector(selectAllEmployees);
+interface IEmployeesProps {
+  employees: IEmployeeDTO[];
+  removeEmployee: any;
+}
 
-  useEffect(() => {
-    console.log(employees);
-  }, [employees]);
-
+export const Employees: React.FC<IEmployeesProps> = ({
+  employees,
+  removeEmployee,
+}): ReactElement => {
   return (
     <div className={'employees__list'}>
-      {employees.map((employee) => (
-        <Employee key={employee.id} employee={employee} />
-      ))}
+      {employees.map(
+        (employee) =>
+          employee.name &&
+          employee.surname &&
+          employee.position &&
+          employee.email && (
+            <Employee
+              key={employee.id}
+              employee={employee}
+              removeEmployee={removeEmployee}
+            />
+          )
+      )}
     </div>
   );
 };

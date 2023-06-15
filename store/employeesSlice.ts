@@ -26,6 +26,29 @@ export const getEmployees = createAsyncThunk(
   }
 );
 
+export const upsertEmployee = createAsyncThunk(
+  'employeesSlice/upsertEmployee',
+  async (employee: IEmployeeDTO) => {
+    const result = await axios
+      .post('https://rocky-temple-83495.herokuapp.com/employees', {
+        name: employee.name,
+        surname: employee.surname,
+        email: employee.email,
+        position: employee.position,
+      })
+      .then((res) => res);
+
+    return result;
+  }
+);
+
+export const deleteEmployee = createAsyncThunk(
+  'employeesSlice/deleteEmployee',
+  async (id) => {
+    axios.delete(`https://rocky-temple-83495.herokuapp.com/employees/${id}`);
+  }
+);
+
 const employeesSlice = createSlice({
   name: 'employees',
   initialState,
