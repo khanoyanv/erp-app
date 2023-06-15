@@ -13,14 +13,12 @@
   opacity: 0.9;
 }
 
-.list-item__name {
-  display: flex;
+.list-item label {
   cursor: pointer;
 }
 
-.list-item__email {
-  display: flex;
-  cursor: pointer;
+.list-item label:hover {
+  opacity: 0.9;
 }
 
 .list-item__position {
@@ -30,6 +28,5 @@
 
 .list-item__delete-icon {
   display: flex;
-  /* flex: 3; */
   cursor: pointer;
 }

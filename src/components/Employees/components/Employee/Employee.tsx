@@ -5,14 +5,20 @@ import './employee.css';
 interface IEmployeeProps {
   employee: IEmployeeDTO;
   removeEmployee: any;
+  openEmployee: any;
 }
 
 export const Employee: React.FC<IEmployeeProps> = ({
   employee,
   removeEmployee,
+  openEmployee,
 }): ReactElement => {
   return (
-    <div className='list-item' id={employee.id.toString()}>
+    <div
+      className='list-item'
+      id={employee.id.toString()}
+      onClick={() => openEmployee(employee)}
+    >
       <label
         className={'list-item__name'}
       >{`${employee.name} ${employee.surname}`}</label>
@@ -20,7 +26,7 @@ export const Employee: React.FC<IEmployeeProps> = ({
       <label className='list-item__position'>{employee.position}</label>
       <div
         className='list-item__delete-icon'
-        title={'remove element'}
+        title={'remove employee'}
         id={employee.id.toString()}
         onClick={(e: any) => removeEmployee(e.target.id)}
       >

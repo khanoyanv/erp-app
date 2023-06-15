@@ -46,6 +46,8 @@ export const deleteEmployee = createAsyncThunk(
   'employeesSlice/deleteEmployee',
   async (id) => {
     axios.delete(`https://rocky-temple-83495.herokuapp.com/employees/${id}`);
+
+    return id;
   }
 );
 

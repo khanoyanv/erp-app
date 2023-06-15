@@ -1,13 +1,15 @@
 import React, { ReactElement } from 'react';
-import './addForm.css';
+import './addEmployeeForm.css';
 import { IEmployeeDTO } from '../../../dto/EmployeeDTO';
 
-interface IAddFromProps {
+interface IAddEmployeeFormProps {
+  employee: IEmployeeDTO;
   setEmployee: any;
   addEmployee: any;
 }
 
-export const AddForm: React.FC<IAddFromProps> = ({
+export const AddEmployeeForm: React.FC<IAddEmployeeFormProps> = ({
+  employee,
   addEmployee,
   setEmployee,
 }): ReactElement => {
@@ -55,6 +57,7 @@ export const AddForm: React.FC<IAddFromProps> = ({
           type='text'
           placeholder={'Type name...'}
           name={'name'}
+          value={employee.name}
           onChange={(e) => handleChange(e)}
         />
       </div>
@@ -63,6 +66,7 @@ export const AddForm: React.FC<IAddFromProps> = ({
           type='text'
           placeholder={'Type surname...'}
           name={'surname'}
+          value={employee.surname}
           onChange={(e) => handleChange(e)}
         />
       </div>
@@ -71,6 +75,7 @@ export const AddForm: React.FC<IAddFromProps> = ({
           type='text'
           placeholder={'Type email'}
           name={'email'}
+          value={employee.email}
           onChange={(e) => handleChange(e)}
         />
       </div>
@@ -79,6 +84,7 @@ export const AddForm: React.FC<IAddFromProps> = ({
           type='text'
           placeholder={'Type position'}
           name={'position'}
+          value={employee.position}
           onChange={(e) => handleChange(e)}
         />
       </div>
