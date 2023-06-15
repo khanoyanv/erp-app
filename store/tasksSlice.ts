@@ -71,4 +71,20 @@ const tasksSlice = createSlice({
 
 export const selectAllTasks = (state: RootState) => state.tasks.tasks;
 
+export const selectFilteredTasks =
+  (searchTerm: string) => (state: RootState) => {
+    const tasks: ITaskDTO[] = state.tasks.tasks;
+    const filteredTasks: ITaskDTO[] = tasks.filter(
+      (task) =>
+        task.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        task.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        task.startDate
+          .toLowerCase()
+          .includes(searchTerm.toString().toLowerCase()) ||
+        task.endDate.toLowerCase().includes(searchTerm.toString().toLowerCase())
+    );
+
+    return filteredTasks;
+  };
+
 export const tasksReducer = tasksSlice.reducer;

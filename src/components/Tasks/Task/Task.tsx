@@ -13,8 +13,20 @@ export const Task: React.FC<ITaskProps> = ({
 }): ReactElement => {
   return (
     <div className='list-item'>
-      <label className='list-item__name'>{task.name}</label>
-      <label className='list-item__name'>{task.description}</label>
+      <label>{task.name}</label>
+      <label>{task.description}</label>
+      <input
+        type={'date'}
+        className={'list-item__startDate'}
+        disabled={true}
+        value={task.startDate}
+      />
+      <input
+        type={'date'}
+        className={'list-item__endDate'}
+        disabled={true}
+        value={task.endDate}
+      />
       <div
         className='list-item__delete-icon'
         title={'remove task'}

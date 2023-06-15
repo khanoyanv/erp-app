@@ -14,7 +14,9 @@ export const Employees: React.FC<IEmployeesProps> = ({
   employees,
 }): ReactElement => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedEmployee, setSelectedEmployee] = useState<IEmployeeDTO>();
+  const [selectedEmployee, setSelectedEmployee] = useState<
+    IEmployeeDTO | undefined
+  >();
 
   const handleEmployeeClick = (employee: IEmployeeDTO) => {
     setSelectedEmployee(employee);

@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { IEmployeeDTO } from '../../../../../dto/EmployeeDTO';
 
 interface IEmployeeModalProps {
-  employee: IEmployeeDTO;
+  employee: IEmployeeDTO | undefined;
   closeModal: any;
 }
 
@@ -13,10 +13,9 @@ export const EmployeeModal: React.FC<IEmployeeModalProps> = ({
 }): ReactElement => {
   return (
     <Modal isOpen={true} onRequestClose={closeModal}>
-      <h2>{`${employee.name} ${employee.surname}`}</h2>
-      <p>Email: {employee.email}</p>
-      <p>Position: {employee.position}</p>
-      {/* Add more details as needed */}
+      <h2>{`${employee?.name} ${employee?.surname}`}</h2>
+      <p>Email: {employee?.email}</p>
+      <p>Position: {employee?.position}</p>
     </Modal>
   );
 };
