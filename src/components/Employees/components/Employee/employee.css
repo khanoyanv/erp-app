@@ -1,0 +1,41 @@
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.3s;
+}
+
+.list-item:hover {
+  opacity: 0.9;
+}
+
+.list-item__name {
+  display: flex;
+  /* flex: 1;
+  margin-left: 10%; */
+  cursor: pointer;
+}
+
+.list-item__email {
+  display: flex;
+  /* flex: 2; */
+  /* margin-left: 10%; */
+  cursor: pointer;
+}
+
+.list-item__position {
+  display: flex;
+  /* flex: 3; */
+  /* margin-left: 10%; */
+  cursor: pointer;
+}
+
+.list-item__delete-icon {
+  display: flex;
+  /* flex: 3; */
+  cursor: pointer;
+}

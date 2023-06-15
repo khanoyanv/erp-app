@@ -24,10 +24,8 @@ export const MainPage = () => {
 
   return (
     <div className={'mainPage__container'}>
-      <div className='tabs__container'>
-        <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-        {activeTab === 'employees' ? renderEmployees() : renderTasks()}
-      </div>
+      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      {activeTab === 'employees' ? renderEmployees() : renderTasks()}
     </div>
   );
 };
