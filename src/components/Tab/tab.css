@@ -1,0 +1,19 @@
+.tab {
+  box-sizing: border-box;
+  padding: 10px 15px;
+  border-bottom: 2px solid transparent;
+  font-family: Monospace;
+  font-size: 16px;
+  opacity: 0.9;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.tab:hover {
+  opacity: 1;
+  border-bottom: 2px solid blue;
+}
+
+tab:focus {
+  opacity: 1;
+}

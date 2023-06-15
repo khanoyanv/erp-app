@@ -1,0 +1,12 @@
+.mainPage__container {
+  margin: 10% auto;
+  height: 50vh;
+  width: 50vw;
+  border: 1px solid black;
+}
+
+.tabs__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
